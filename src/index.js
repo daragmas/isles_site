@@ -5,6 +5,9 @@ import Home from './components/Home.jsx';
 import Characters from './components/Characters'
 import Isles from './components/Isles'
 import Summaries from './components/Summaries'
+import Navbar from './components/Navbar';
+import ErrorPage from './components/ErrorPage'
+
 import {
   createBrowserRouter,
   RouterProvider,
@@ -14,20 +17,23 @@ import {
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home/>,
-  }, 
-  {
-    path: "/isles",
-    element: <Isles />,
-  },
-  {
-    path: "/characters",
-    element: <Characters />,
-  },
-  {
-    path: "/summaries",
-    element: <Summaries />,
-  },
+    element: <Home />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/isles",
+        element: <Isles />,
+      },
+      {
+        path: "/characters",
+        element: <Characters />,
+      },
+      {
+        path: "/summaries",
+        element: <Summaries />,
+      }
+    ]
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

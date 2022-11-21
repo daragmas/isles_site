@@ -1,0 +1,31 @@
+#lists-container{
+    margin: auto;
+    padding: 0%;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+}
+
+.character-lists{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7%;
+    width: 90%;
+}
+
+.card{
+    border: 3px black solid;
+    border-radius: 10px;
+    flex: 0 1 auto;
+    margin: 3%;
+    padding: 7%;
+    text-align: center;
+    width: 15rem;
+}
+
+.hidden{
+    display: none;
+}
